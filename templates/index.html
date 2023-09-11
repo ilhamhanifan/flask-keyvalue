@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask and Redis</title>
+</head>
+<body>
+    <h1>Set Key-Value to redis</h1>
+    <form method="POST" action="http://localhost:8000/set/" id="myForm">
+        <label for="key">Key:</label>
+        <input type="text" name="key" id="key" required><br><br>
+        <label for="value">Value:</label>
+        <input type="text" name="value" id="value" required><br><br>
+        <input type="submit" value="Set" onclick="submitForm()">
+    </form>
+</body>
+</html>
+    
+<script>
+    function submitForm() {
+        var keyInput = document.getElementById("key").value;
+        var valueInput = document.getElementById("value").value;
+        var jsonData = {
+            key: keyInput,
+            value: valueInput
+        };
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost:8000/set/", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        console.log('TESTING')
+        xhr.send(JSON.stringify(jsonData));
+    }
+    </script>
