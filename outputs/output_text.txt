@@ -1,0 +1,35 @@
+peko at LAPTOP-HPMP5EDG in ~
+○ curl -X POST http://localhost:8000/set/ \
+-H "Content-Type: application/json" \
+-d '{"key": "nowkey", "value": "nowvaalue"}'
+{"message":"Key Value write success"}
+
+peko at LAPTOP-HPMP5EDG in ~
+○
+
+peko at LAPTOP-HPMP5EDG in ~
+○ curl -X POST http://localhost:8000/set/ \
+-H "Content-Type: application/json" \
+-d '{"key": "nowkey", "value": "nowvaalue"}'
+{"message":"Key with this value already exist"}
+
+peko at LAPTOP-HPMP5EDG in ~
+○
+
+peko at LAPTOP-HPMP5EDG in ~
+○ curl -X POST http://localhost:8000/set/ \
+-H "Content-Type: application/json" \
+-d '{"key": "nowkey", "value": "nowvaalue"}'
+{"message":"Key Value write success"}
+
+peko at LAPTOP-HPMP5EDG in ~
+○ curl -X POST http://localhost:8000/set/ \
+-H "Content-Type: application/json" \
+-d '{"key": "nowkey", "value": "nowvaalue"}'
+{"message":"Key with this value already exist"}
+
+peko at LAPTOP-HPMP5EDG in ~
+○ curl -X POST http://localhost:8000/set/ \
+-H "Content-Type: application/json" \
+-d '{"key": "newkey", "value": "newvaalue"}'
+{"message":"Key Value write success"}
