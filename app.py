@@ -1,10 +1,14 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import redis
 
 app = Flask(__name__)
 rc = redis.Redis(host='app_redis', port='6379', db=0)
 
 keyvalue = {}
+
+@app.route('/', methods=['GET'])
+def home():
+    return render_template("index.html")
 
 @app.route("/set/", methods=['POST'])
 def set_key_value():
